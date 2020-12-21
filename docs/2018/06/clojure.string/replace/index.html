@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>clojure.string/replace</title>
+	
+	
+	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://quan-nh.github.io/notes/">q-notes</a> ==<br>
+	=============
+	<div style="float: right;">Note all the things!</div><br>
+	<p>
+	<nav>
+			<a href="https://quan-nh.github.io/notes/"><b>Start</b></a>.
+			
+			
+			<a href="https://quan-nh.github.io/notes/posts/"><b>Posts</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/categories/"><b>Categories</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>clojure.string/replace</h1>
+			<b><time>22.06.2018 14:25</time></b>
+		       
+		           <a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/string">string</a>
+        	       
+
+			<div>
+				<p><code>clojure.string/replace</code> function is interesting! It can accept different types of input data.</p>
+<p>The form of this function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">clojure.string/replace</span> s match replacement)
+</code></pre></div><p>Where match/replacement can be:</p>
+<ul>
+<li>string/string</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">str/replace</span> <span style="color:#e6db74">&#34;The color is red&#34;</span> <span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#e6db74">&#34;blue&#34;</span>)
+<span style="color:#75715e">;=&gt; &#34;The color is blue&#34;</span>
+</code></pre></div><ul>
+<li>char/char</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">str/replace</span> <span style="color:#e6db74">&#34;The color is red&#34;</span> <span style="color:#e6db74">\c</span> <span style="color:#e6db74">\k</span>)
+<span style="color:#75715e">;=&gt; &#34;The kolor is red&#34;</span>
+</code></pre></div><ul>
+<li>pattern/string</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">str/replace</span> <span style="color:#e6db74">&#34;The color is red&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;red&#34;</span> <span style="color:#e6db74">&#34;blue&#34;</span>)
+<span style="color:#75715e">;=&gt; &#34;The color is blue&#34;</span>
+
+<span style="color:#75715e">;; $1, $2, etc. in the string are matched with regex pattern</span>
+(<span style="color:#a6e22e">str/replace</span> <span style="color:#e6db74">&#34;Almost Pig Latin&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;\b(\w)(\w+)\b&#34;</span> <span style="color:#e6db74">&#34;$2$1ay&#34;</span>)
+<span style="color:#75715e">;=&gt; &#34;lmostAay igPay atinLay&#34;</span>
+</code></pre></div><ul>
+<li>pattern/function</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">str/replace</span> <span style="color:#e6db74">&#34;The color is red.&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;[aeiou]&#34;</span>  <span style="color:#f92672">#</span>(str %1 %1))
+<span style="color:#75715e">;=&gt; &#34;Thee cooloor iis reed.&#34;</span>
+
+<span style="color:#75715e">;; replaces all a&#39;s with 1 and all b&#39;s with 2 (map&#39;s also function)</span>
+(<span style="color:#a6e22e">str/replace</span> <span style="color:#e6db74">&#34;a b a&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;a|b&#34;</span> {<span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#e6db74">&#34;2&#34;</span>})
+<span style="color:#75715e">;=&gt; &#34;1 2 1&#34;</span>
+
+<span style="color:#75715e">;; to title case</span>
+(<span style="color:#a6e22e">str/replace</span> <span style="color:#e6db74">&#34;hello world&#34;</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;\b.&#34;</span> <span style="color:#f92672">#</span>(<span style="color:#a6e22e">.toUpperCase</span> %1))
+<span style="color:#75715e">;=&gt; &#34;Hello World&#34;</span>
+</code></pre></div><h2 id="specing">Spec&rsquo;ing</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">s/fdef</span> clojure.string/replace
+        <span style="color:#e6db74">:args</span> (<span style="color:#a6e22e">s/alt</span> <span style="color:#e6db74">:string-string</span> (<span style="color:#a6e22e">s/cat</span> <span style="color:#e6db74">:s</span> string?
+                                           <span style="color:#e6db74">:match</span> string?
+                                           <span style="color:#e6db74">:replacement</span> string?)
+                     <span style="color:#e6db74">:char-char</span> (<span style="color:#a6e22e">s/cat</span> <span style="color:#e6db74">:s</span> string?
+                                       <span style="color:#e6db74">:match</span> char?
+                                       <span style="color:#e6db74">:replacement</span> char?)
+                     <span style="color:#e6db74">:pattern-string</span> (<span style="color:#a6e22e">s/cat</span> <span style="color:#e6db74">:s</span> string?
+                                            <span style="color:#e6db74">:match</span> pattern?
+                                            <span style="color:#e6db74">:replacement</span> string?)
+                     <span style="color:#e6db74">:pattern-function</span> (<span style="color:#a6e22e">s/cat</span> <span style="color:#e6db74">:s</span> string?
+                                              <span style="color:#e6db74">:match</span> pattern?
+                                              <span style="color:#e6db74">:replacement</span> ifn?))
+        <span style="color:#e6db74">:ret</span> string?)
+</code></pre></div>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/06/clojure.string/replace/">clojure.string/replace</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/06/https/">https</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="https://quan-nh.github.io/notes/"><b>q-notes</b></a>.
+	<a href="https://github.com/quan-nh"><b>Github</b></a>.
+	<a href="https://twitter.com/huu2uan"><b>Twitter</b></a>.
+	<a href="https://quan-nh.github.io/notes/index.xml"><b>RSS</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

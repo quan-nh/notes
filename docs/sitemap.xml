@@ -8,12 +8,17 @@
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/tags/https/</loc>
+    <loc>https://quan-nh.github.io/notes/tags/clojure/</loc>
     <lastmod>2018-06-22T14:25:15+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/2018/06/https/</loc>
+    <loc>https://quan-nh.github.io/notes/categories/clojure/</loc>
+    <lastmod>2018-06-22T14:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/2018/06/clojure.string/replace/</loc>
     <lastmod>2018-06-22T14:25:15+07:00</lastmod>
   </url>
   
@@ -28,7 +33,7 @@
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/tags/ssl/</loc>
+    <loc>https://quan-nh.github.io/notes/tags/string/</loc>
     <lastmod>2018-06-22T14:25:15+07:00</lastmod>
   </url>
   
@@ -38,13 +43,28 @@
   </url>
   
   <url>
+    <loc>https://quan-nh.github.io/notes/tags/https/</loc>
+    <lastmod>2018-06-22T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/2018/06/https/</loc>
+    <lastmod>2018-06-22T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/ssl/</loc>
+    <lastmod>2018-06-22T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://quan-nh.github.io/notes/tags/web/</loc>
-    <lastmod>2018-06-22T14:25:15+07:00</lastmod>
+    <lastmod>2018-06-22T10:25:15+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://quan-nh.github.io/notes/categories/web/</loc>
-    <lastmod>2018-06-22T14:25:15+07:00</lastmod>
+    <lastmod>2018-06-22T10:25:15+07:00</lastmod>
   </url>
   
 </urlset>

@@ -8,9 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Jun 2018 14:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>clojure</title>
+      <link>https://quan-nh.github.io/notes/categories/clojure/</link>
+      <pubDate>Fri, 22 Jun 2018 14:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/categories/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>web</title>
       <link>https://quan-nh.github.io/notes/categories/web/</link>
-      <pubDate>Fri, 22 Jun 2018 14:25:15 +0700</pubDate>
+      <pubDate>Fri, 22 Jun 2018 10:25:15 +0700</pubDate>
       
       <guid>https://quan-nh.github.io/notes/categories/web/</guid>
       <description></description>

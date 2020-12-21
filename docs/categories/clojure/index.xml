@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on q-notes</title>
-    <link>https://quan-nh.github.io/notes/posts/</link>
-    <description>Recent content in Posts on q-notes</description>
+    <title>clojure on q-notes</title>
+    <link>https://quan-nh.github.io/notes/categories/clojure/</link>
+    <description>Recent content in clojure on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jun 2018 14:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jun 2018 14:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/categories/clojure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>clojure.string/replace</title>
       <link>https://quan-nh.github.io/notes/2018/06/clojure.string/replace/</link>
@@ -17,15 +17,6 @@
 The form of this function:
 (clojure.string/replace s match replacement) Where match/replacement can be:
  string/string  (str/replace &amp;#34;The color is red&amp;#34; &amp;#34;red&amp;#34; &amp;#34;blue&amp;#34;) ;=&amp;gt; &amp;#34;The color is blue&amp;#34;  char/char  (str/replace &amp;#34;The color is red&amp;#34; \c \k) ;=&amp;gt; &amp;#34;The kolor is red&amp;#34;  pattern/string  (str/replace &amp;#34;The color is red&amp;#34; #&amp;#34;red&amp;#34; &amp;#34;blue&amp;#34;) ;=&amp;gt; &amp;#34;The color is blue&amp;#34; ;; $1, $2, etc.</description>
-    </item>
-    
-    <item>
-      <title>https</title>
-      <link>https://quan-nh.github.io/notes/2018/06/https/</link>
-      <pubDate>Fri, 22 Jun 2018 10:25:15 +0700</pubDate>
-      
-      <guid>https://quan-nh.github.io/notes/2018/06/https/</guid>
-      <description>   </description>
     </item>
     
   </channel>
