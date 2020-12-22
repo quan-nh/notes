@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Clojure Files</title>
+	<title>Oauth2 Login Flow</title>
 	
 	
 	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
@@ -35,37 +35,21 @@
 	
 	<main>
 		<article>
-			<h1>Clojure Files</h1>
-			<b><time>12.07.2018 10:25</time></b>
+			<h1>Oauth2 Login Flow</h1>
+			<b><time>16.04.2020 10:25</time></b>
 		       
-		           <a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
-        	       
-		           <a href="https://quan-nh.github.io/notes/tags/file">file</a>
+		           <a href="https://quan-nh.github.io/notes/tags/oauth2">oauth2</a>
         	       
 
 			<div>
-				<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clojure.java.io <span style="color:#e6db74">:as</span> io])
+				<p>
+<figure>
+  <img src="https://quan-nh.github.io/notes/images/oauth2_login_flow.png" alt="OAuth2 Login Flow" />
+</figure>
 
-<span style="color:#75715e">; returns java.io.File object</span>
-(<span style="color:#a6e22e">io/file</span> <span style="color:#e6db74">&#34;/tmp/foo&#34;</span>)
 
-<span style="color:#75715e">; returns seq of java.io.File in a dir</span>
-(file-seq (<span style="color:#a6e22e">io/file</span> <span style="color:#e6db74">&#34;/tmp&#34;</span>))
+</p>
 
-<span style="color:#75715e">; java.io.File class</span>
-<span style="color:#75715e">; https://docs.oracle.com/javase/7/docs/api/java/io/File.html</span>
-(<span style="color:#a6e22e">.isDirectory</span> %)
-(<span style="color:#a6e22e">.isFile</span> %)
-(<span style="color:#a6e22e">.getName</span> %)
-(<span style="color:#a6e22e">.getPath</span> %)
-
-<span style="color:#75715e">; create dir</span>
-(<span style="color:#a6e22e">.mkdir</span> (<span style="color:#a6e22e">io/file</span> <span style="color:#e6db74">&#34;dir&#34;</span>))
-
-<span style="color:#75715e">; delete dir has files</span>
-(doseq [f (reverse (file-seq (<span style="color:#a6e22e">io/file</span> dir)))]
-  (<span style="color:#a6e22e">io/delete-file</span> f))
-</code></pre></div>
 			</div>
 		</article>
 	</main>
