@@ -2,8 +2,6 @@
 title: learning red/rebol
 date: 2018-07-02T10:25:15+07:00
 draft: false
-categories:
-  - programming language
 tags:
   - red
   - rebol

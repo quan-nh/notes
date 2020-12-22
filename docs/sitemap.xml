@@ -33,17 +33,32 @@
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/categories/</loc>
-    <lastmod>2018-07-02T10:25:15+07:00</lastmod>
+    <loc>https://quan-nh.github.io/notes/tags/algorithm/</loc>
+    <lastmod>2018-07-03T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/java/</loc>
+    <lastmod>2018-07-03T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/queue/</loc>
+    <lastmod>2018-07-03T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/stack/</loc>
+    <lastmod>2018-07-03T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/2018/07/stack-queue/</loc>
+    <lastmod>2018-07-03T10:25:15+07:00</lastmod>
   </url>
   
   <url>
     <loc>https://quan-nh.github.io/notes/2018/07/learning-red/rebol/</loc>
-    <lastmod>2018-07-02T10:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://quan-nh.github.io/notes/categories/programming-language/</loc>
     <lastmod>2018-07-02T10:25:15+07:00</lastmod>
   </url>
   
@@ -73,16 +88,6 @@
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/categories/web/</loc>
-    <lastmod>2018-06-25T10:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://quan-nh.github.io/notes/categories/clojure/</loc>
-    <lastmod>2018-06-22T14:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://quan-nh.github.io/notes/2018/06/clojure.string/replace/</loc>
     <lastmod>2018-06-22T14:25:15+07:00</lastmod>
   </url>
@@ -105,6 +110,10 @@
   <url>
     <loc>https://quan-nh.github.io/notes/tags/ssl/</loc>
     <lastmod>2018-06-22T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/categories/</loc>
   </url>
   
 </urlset>

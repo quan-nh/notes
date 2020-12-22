@@ -2,8 +2,6 @@
 title: clojure.string/replace
 date: 2018-06-22T14:25:15+07:00
 draft: false
-categories:
-  - clojure
 tags:
   - clojure
   - string

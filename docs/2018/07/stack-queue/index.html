@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>stack &amp; queue</title>
+	
+	
+	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://quan-nh.github.io/notes/">q-notes</a> ==<br>
+	=============
+	<div style="float: right;">Note all the things!</div><br>
+	<p>
+	<nav>
+			<a href="https://quan-nh.github.io/notes/"><b>Start</b></a>.
+			
+			
+			<a href="https://quan-nh.github.io/notes/posts/"><b>Posts</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>stack &amp; queue</h1>
+			<b><time>03.07.2018 10:25</time></b>
+		       
+		           <a href="https://quan-nh.github.io/notes/tags/algorithm">algorithm</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/stack">stack</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/queue">queue</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/java">java</a>
+        	       
+
+			<div>
+				<h3 id="stack">Stack</h3>
+<ul>
+<li>Java</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Stack<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> st <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Stack<span style="color:#f92672">&lt;&gt;();</span>
+
+st<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span> <span style="color:#75715e">// st=[1]
+</span><span style="color:#75715e"></span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>2<span style="color:#f92672">);</span> <span style="color:#75715e">// st=[1, 2]
+</span><span style="color:#75715e"></span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">push</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span> <span style="color:#75715e">// st=[1, 2, 3]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// returns the element on the top of the stack, removing it from stack
+</span><span style="color:#75715e"></span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">pop</span><span style="color:#f92672">();</span> <span style="color:#75715e">//=&gt; 3, st=[1, 2]
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// returns the element on the top of the stack, but does not remove it
+</span><span style="color:#75715e"></span>st<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">();</span> <span style="color:#75715e">//=&gt; 2, st=[1, 2]
+</span></code></pre></div><ul>
+<li>Clojure Vector</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">def </span>st [<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>])
+<span style="color:#75715e">; the functions operate on the right side</span>
+(peek st)   <span style="color:#75715e">;=&gt; 3</span>
+(pop st)    <span style="color:#75715e">;=&gt; [1 2]</span>
+(conj st <span style="color:#ae81ff">4</span>) <span style="color:#75715e">;=&gt; [1 2 3 4]</span>
+</code></pre></div><ul>
+<li>Clojure List</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">def </span>st <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>))
+<span style="color:#75715e">; the functions operate on the left side</span>
+(peek st)   <span style="color:#75715e">;=&gt; 1</span>
+(pop st)    <span style="color:#75715e">;=&gt; (2 3)</span>
+(conj st <span style="color:#ae81ff">4</span>) <span style="color:#75715e">;=&gt; (4 1 2 3)</span>
+</code></pre></div><h3 id="queue">Queue</h3>
+<p>Add last, remove first impl:</p>
+<ul>
+<li>Java</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Queue<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> q <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LinkedList<span style="color:#f92672">&lt;&gt;();</span>
+
+q<span style="color:#f92672">.</span><span style="color:#a6e22e">addLast</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span> <span style="color:#75715e">// q=[1]
+</span><span style="color:#75715e"></span>q<span style="color:#f92672">.</span><span style="color:#a6e22e">addLast</span><span style="color:#f92672">(</span>2<span style="color:#f92672">);</span> <span style="color:#75715e">// q=[1, 2]
+</span><span style="color:#75715e"></span>q<span style="color:#f92672">.</span><span style="color:#a6e22e">addLast</span><span style="color:#f92672">(</span>3<span style="color:#f92672">);</span> <span style="color:#75715e">// q=[1, 2, 3]
+</span><span style="color:#75715e"></span>
+q<span style="color:#f92672">.</span><span style="color:#a6e22e">poll</span><span style="color:#f92672">();</span> <span style="color:#75715e">//=&gt; 1, q=[2, 3]
+</span><span style="color:#75715e"></span>
+q<span style="color:#f92672">.</span><span style="color:#a6e22e">peek</span><span style="color:#f92672">();</span> <span style="color:#75715e">//=&gt; 2, q=[2, 3]
+</span></code></pre></div><ul>
+<li>Clojure</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">def </span>q (conj PersistentQueue/EMPTY <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>))
+
+(peek q)   <span style="color:#75715e">;=&gt; 1</span>
+(pop q)    <span style="color:#75715e">;=&gt; &lt;-(2 3)-&lt;</span>
+(conj q <span style="color:#ae81ff">4</span>) <span style="color:#75715e">;=&gt; &lt;-(1 2 3 4)-&lt;</span>
+</code></pre></div>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/07/clojure-files/">clojure files</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/07/stack-queue/">stack &amp; queue</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/07/learning-red/rebol/">learning red/rebol</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/06/clojure-ring/">clojure ring</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/06/clojure.string/replace/">clojure.string/replace</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="https://quan-nh.github.io/notes/"><b>q-notes</b></a>.
+	<a href="https://github.com/quan-nh"><b>Github</b></a>.
+	<a href="https://twitter.com/huu2uan"><b>Twitter</b></a>.
+	<a href="https://quan-nh.github.io/notes/index.xml"><b>RSS</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

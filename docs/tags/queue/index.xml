@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>queue on q-notes</title>
+    <link>https://quan-nh.github.io/notes/tags/queue/</link>
+    <description>Recent content in queue on q-notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/queue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>stack &amp; queue</title>
+      <link>https://quan-nh.github.io/notes/2018/07/stack-queue/</link>
+      <pubDate>Tue, 03 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2018/07/stack-queue/</guid>
+      <description>Stack  Java  Stack&amp;lt;Integer&amp;gt; st = new Stack&amp;lt;&amp;gt;(); st.push(1); // st=[1] st.push(2); // st=[1, 2] st.push(3); // st=[1, 2, 3]  // returns the element on the top of the stack, removing it from stack st.pop(); //=&amp;gt; 3, st=[1, 2]  // returns the element on the top of the stack, but does not remove it st.peek(); //=&amp;gt; 2, st=[1, 2]  Clojure Vector  (def st [1 2 3]) ; the functions operate on the right side (peek st) ;=&amp;gt; 3 (pop st) ;=&amp;gt; [1 2] (conj st 4) ;=&amp;gt; [1 2 3 4]  Clojure List  (def st &amp;#39;(1 2 3)) ; the functions operate on the left side (peek st) ;=&amp;gt; 1 (pop st) ;=&amp;gt; (2 3) (conj st 4) ;=&amp;gt; (4 1 2 3) Queue Add last, remove first impl:</description>
+    </item>
+    
+  </channel>
+</rss>
