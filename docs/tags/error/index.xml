@@ -13,7 +13,7 @@
       <pubDate>Thu, 15 Oct 2020 10:25:15 +0700</pubDate>
       
       <guid>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</guid>
-      <description>(defn div [x] (try (/ 3 x) (catch Exception e ;; ex-info return an ExceptionInfo exception with map data (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &amp;#34;Divide by zero&amp;#34; ;; ex-data get map data from ExceptionInfo exception (prn (ex-data e)) ; {:x 0} )) </description>
+      <description>(defn div [x] (try (/ 3 x) (catch Exception e ; ex-info creates an instance of ExceptionInfo, a RuntimeException subclass ; that carries a map of additional data. (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &amp;#34;Divide by zero&amp;#34; ; ex-data returns exception map data from ExceptionInfo instance (prn (ex-data e)) ; {:x 0} )) </description>
     </item>
     
   </channel>

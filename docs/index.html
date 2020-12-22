@@ -48,7 +48,7 @@
 	<a href="https://quan-nh.github.io/notes/tags/error">error</a>
 	
 	<div>
-		(defn div [x] (try (/ 3 x) (catch Exception e ;; ex-info return an ExceptionInfo exception with map data (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &#34;Divide by zero&#34; ;; ex-data get map data from ExceptionInfo exception (prn (ex-data e)) ; {:x 0} )) 
+		(defn div [x] (try (/ 3 x) (catch Exception e ; ex-info creates an instance of ExceptionInfo, a RuntimeException subclass ; that carries a map of additional data. (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &#34;Divide by zero&#34; ; ex-data returns exception map data from ExceptionInfo instance (prn (ex-data e)) ; {:x 0} )) 
 		
 	</div>
 </article>

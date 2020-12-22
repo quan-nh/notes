@@ -50,14 +50,15 @@
   (<span style="color:#a6e22e">try</span>
     (/ <span style="color:#ae81ff">3</span> x)
     (<span style="color:#a6e22e">catch</span> Exception e
-      <span style="color:#75715e">;; ex-info return an ExceptionInfo exception with map data</span>
+      <span style="color:#75715e">; ex-info creates an instance of ExceptionInfo, a RuntimeException subclass</span>
+      <span style="color:#75715e">; that carries a map of additional data.</span>
       (<span style="color:#a6e22e">throw</span> (<span style="color:#a6e22e">ex-info</span> (<span style="color:#a6e22e">.getMessage</span> e) {<span style="color:#e6db74">:x</span> x})))))
 
 (<span style="color:#a6e22e">try</span>
   (<span style="color:#a6e22e">div</span> <span style="color:#ae81ff">0</span>)
   (<span style="color:#a6e22e">catch</span> Exception e
     (prn (<span style="color:#a6e22e">.getMessage</span> e)) <span style="color:#75715e">; &#34;Divide by zero&#34;</span>
-    <span style="color:#75715e">;; ex-data get map data from ExceptionInfo exception</span>
+    <span style="color:#75715e">; ex-data returns exception map data from ExceptionInfo instance</span>
     (prn (<span style="color:#a6e22e">ex-data</span> e))     <span style="color:#75715e">; {:x 0}</span>
     ))
 </code></pre></div>
