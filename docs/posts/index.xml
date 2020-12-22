@@ -14,9 +14,8 @@
       
       <guid>https://quan-nh.github.io/notes/2018/07/oauth2-grant-types/</guid>
       <description>OAuth2 provides several grant types for different use cases.
-Authorization Code Grant ![Authorization Code Grant](&amp;quot;/images/Authorization Code Grant.png&amp;quot;)
-Implicit Grant Previously, it was recommended that browser-based apps use the &amp;ldquo;Implicit&amp;rdquo; flow, which returns an access token immediately in the redirect and does not have a token exchange step. The industry best practice has changed to recommend that the authorization code flow be used without the client secret.
- https://tools.ietf.org/html/rfc8252#section-8.2 https://oauth.net/2/pkce/  !</description>
+Authorization Code Grant    Implicit Grant Previously, it was recommended that browser-based apps use the &amp;ldquo;Implicit&amp;rdquo; flow, which returns an access token immediately in the redirect and does not have a token exchange step. The industry best practice has changed to recommend that the authorization code flow be used without the client secret.
+ https://tools.ietf.org/html/rfc8252#section-8.2 https://oauth.net/2/pkce/     Password Grant    Client Credentials Grant This grant is suitable for machine-to-machine authentication where a specific user’s permission to access data is not required.</description>
     </item>
     
     <item>
