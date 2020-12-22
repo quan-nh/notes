@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>clojure ring</title>
+	
+	
+	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://quan-nh.github.io/notes/">q-notes</a> ==<br>
+	=============
+	<div style="float: right;">Note all the things!</div><br>
+	<p>
+	<nav>
+			<a href="https://quan-nh.github.io/notes/"><b>Start</b></a>.
+			
+			
+			<a href="https://quan-nh.github.io/notes/posts/"><b>Posts</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/categories/"><b>Categories</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>clojure ring</h1>
+			<b><time>25.06.2018 10:25</time></b>
+		       
+		           <a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/ring">ring</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/web">web</a>
+        	       
+
+			<div>
+				<p>
+<figure>
+  <img src="https://quan-nh.github.io/notes/images/ring.jpeg" alt="ring" />
+</figure>
+
+
+</p>
+<ul>
+<li>
+<p>handler fn: <a href="https://github.com/ring-clojure/ring-spec/blob/master/src/ring/core/spec.clj#L114">req</a> -&gt; <a href="https://github.com/ring-clojure/ring-spec/blob/master/src/ring/core/spec.clj#L145">resp</a></p>
+</li>
+<li>
+<p>middleware fn: handler -&gt; handler</p>
+<ul>
+<li>request middleware</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">  (<span style="color:#66d9ef">defn </span>wrap-user [handler user-info]
+    (<span style="color:#66d9ef">fn </span>[request]
+      (<span style="color:#a6e22e">handler</span>
+        (assoc request <span style="color:#e6db74">:user</span> user-info))))
+</code></pre></div><ul>
+<li>response middleware</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">  (<span style="color:#66d9ef">defn </span>wrap-content-type [handler content-type]
+    (<span style="color:#66d9ef">fn </span>[request]
+      (<span style="color:#66d9ef">let </span>[response (<span style="color:#a6e22e">handler</span> request)]
+        (<span style="color:#a6e22e">assoc-in</span> response [<span style="color:#e6db74">:headers</span> <span style="color:#e6db74">&#34;Content-Type&#34;</span>] content-type))))
+</code></pre></div><ul>
+<li>req+resp middleware</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">  (<span style="color:#66d9ef">defn </span>wrap-cookies [handler options]
+    (<span style="color:#66d9ef">fn </span>[request]
+      (-&gt; request
+          (<span style="color:#a6e22e">cookies-request</span> options)
+          handler
+          (<span style="color:#a6e22e">cookies-response</span> options))))
+</code></pre></div></li>
+<li>
+<p>middleware order: bottom up</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(<span style="color:#66d9ef">defn </span>wrap-1 [handler]
+  (<span style="color:#66d9ef">fn </span>[req]
+    (<span style="color:#a6e22e">handler</span>
+      (assoc req <span style="color:#e6db74">:a</span> <span style="color:#ae81ff">1</span>))))
+
+(<span style="color:#66d9ef">defn </span>wrap-2 [handler]
+  (<span style="color:#66d9ef">fn </span>[req]
+    (<span style="color:#a6e22e">handler</span>
+      (assoc req <span style="color:#e6db74">:a</span> <span style="color:#ae81ff">2</span>))))
+
+(-&gt; handler
+    wrap-1
+    wrap-2)
+
+(<span style="color:#a6e22e">wrap-2</span> (<span style="color:#a6e22e">wrap-1</span> handler))
+
+(<span style="color:#a6e22e">wrap-2</span> <span style="color:#f92672">#</span>(<span style="color:#a6e22e">handler</span> (assoc % <span style="color:#e6db74">:a</span> <span style="color:#ae81ff">1</span>)))
+
+(<span style="color:#66d9ef">fn </span>[req]
+  (<span style="color:#f92672">#</span>(<span style="color:#a6e22e">handler</span> (assoc % <span style="color:#e6db74">:a</span> <span style="color:#ae81ff">1</span>))
+    (assoc req <span style="color:#e6db74">:a</span> <span style="color:#ae81ff">2</span>)))
+
+(<span style="color:#66d9ef">fn </span>[req]
+  (<span style="color:#a6e22e">handler</span> (assoc (assoc req <span style="color:#e6db74">:a</span> <span style="color:#ae81ff">2</span>) <span style="color:#e6db74">:a</span> <span style="color:#ae81ff">1</span>)))
+</code></pre></div></li>
+</ul>
+
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/07/clojure-files/">clojure files</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/07/learning-red/rebol/">learning red/rebol</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/06/clojure-ring/">clojure ring</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/06/clojure.string/replace/">clojure.string/replace</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2018/06/https/">https</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2020 <a href="https://quan-nh.github.io/notes/"><b>q-notes</b></a>.
+	<a href="https://github.com/quan-nh"><b>Github</b></a>.
+	<a href="https://twitter.com/huu2uan"><b>Twitter</b></a>.
+	<a href="https://quan-nh.github.io/notes/index.xml"><b>RSS</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

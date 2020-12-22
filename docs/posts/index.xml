@@ -6,7 +6,16 @@
     <description>Recent content in Posts on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure files</title>
+      <link>https://quan-nh.github.io/notes/2018/07/clojure-files/</link>
+      <pubDate>Thu, 12 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2018/07/clojure-files/</guid>
+      <description>(require &amp;#39;[clojure.java.io :as io]) ; returns java.io.File object (io/file &amp;#34;/tmp/foo&amp;#34;) ; returns seq of java.io.File in a dir (file-seq (io/file &amp;#34;/tmp&amp;#34;)) ; java.io.File class ; https://docs.oracle.com/javase/7/docs/api/java/io/File.html (.isDirectory %) (.isFile %) (.getName %) (.getPath %) ; create dir (.mkdir (io/file &amp;#34;dir&amp;#34;)) ; delete dir has files (doseq [f (reverse (file-seq (io/file dir)))] (io/delete-file f)) </description>
+    </item>
+    
     <item>
       <title>learning red/rebol</title>
       <link>https://quan-nh.github.io/notes/2018/07/learning-red/rebol/</link>
@@ -20,11 +29,11 @@
     </item>
     
     <item>
-      <title>ring</title>
-      <link>https://quan-nh.github.io/notes/2018/06/ring/</link>
+      <title>clojure ring</title>
+      <link>https://quan-nh.github.io/notes/2018/06/clojure-ring/</link>
       <pubDate>Mon, 25 Jun 2018 10:25:15 +0700</pubDate>
       
-      <guid>https://quan-nh.github.io/notes/2018/06/ring/</guid>
+      <guid>https://quan-nh.github.io/notes/2018/06/clojure-ring/</guid>
       <description>handler fn: req -&amp;gt; resp
   middleware fn: handler -&amp;gt; handler
  request middleware  (defn wrap-user [handler user-info] (fn [request] (handler (assoc request :user user-info))))  response middleware  (defn wrap-content-type [handler content-type] (fn [request] (let [response (handler request)] (assoc-in response [:headers &amp;#34;Content-Type&amp;#34;] content-type))))  req+resp middleware  (defn wrap-cookies [handler options] (fn [request] (-&amp;gt; request (cookies-request options) handler (cookies-response options))))   middleware order: bottom up</description>

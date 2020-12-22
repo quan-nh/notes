@@ -6,7 +6,25 @@
     <description>Recent content in Tags on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure</title>
+      <link>https://quan-nh.github.io/notes/tags/clojure/</link>
+      <pubDate>Thu, 12 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>file</title>
+      <link>https://quan-nh.github.io/notes/tags/file/</link>
+      <pubDate>Thu, 12 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/file/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>rebol</title>
       <link>https://quan-nh.github.io/notes/tags/rebol/</link>
@@ -22,15 +40,6 @@
       <pubDate>Mon, 02 Jul 2018 10:25:15 +0700</pubDate>
       
       <guid>https://quan-nh.github.io/notes/tags/red/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clojure</title>
-      <link>https://quan-nh.github.io/notes/tags/clojure/</link>
-      <pubDate>Mon, 25 Jun 2018 10:25:15 +0700</pubDate>
-      
-      <guid>https://quan-nh.github.io/notes/tags/clojure/</guid>
       <description></description>
     </item>
     
