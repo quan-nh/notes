@@ -40,6 +40,27 @@
 		
 		
 			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2018/06/ring/">ring</a></h1>
+	<b><time>25.06.2018 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/ring">ring</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/web">web</a>
+	
+	<div>
+		handler fn: req -&gt; resp
+  middleware fn: handler -&gt; handler
+ request middleware  (defn wrap-user [handler user-info] (fn [request] (handler (assoc request :user user-info))))  response middleware  (defn wrap-content-type [handler content-type] (fn [request] (let [response (handler request)] (assoc-in response [:headers &#34;Content-Type&#34;] content-type))))  req+resp middleware  (defn wrap-cookies [handler options] (fn [request] (-&gt; request (cookies-request options) handler (cookies-response options))))   middleware order: bottom up
+		
+			<a href="https://quan-nh.github.io/notes/2018/06/ring/">Read more...</a>
+		
+	</div>
+</article>
+
+		
+			<article>
 	<h1><a href="https://quan-nh.github.io/notes/2018/06/clojure.string/replace/">clojure.string/replace</a></h1>
 	<b><time>22.06.2018 14:25</time></b>
 	

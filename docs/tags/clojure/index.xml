@@ -6,7 +6,18 @@
     <description>Recent content in clojure on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Jun 2018 14:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jun 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ring</title>
+      <link>https://quan-nh.github.io/notes/2018/06/ring/</link>
+      <pubDate>Mon, 25 Jun 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2018/06/ring/</guid>
+      <description>handler fn: req -&amp;gt; resp
+  middleware fn: handler -&amp;gt; handler
+ request middleware  (defn wrap-user [handler user-info] (fn [request] (handler (assoc request :user user-info))))  response middleware  (defn wrap-content-type [handler content-type] (fn [request] (let [response (handler request)] (assoc-in response [:headers &amp;#34;Content-Type&amp;#34;] content-type))))  req+resp middleware  (defn wrap-cookies [handler options] (fn [request] (-&amp;gt; request (cookies-request options) handler (cookies-response options))))   middleware order: bottom up</description>
+    </item>
+    
     <item>
       <title>clojure.string/replace</title>
       <link>https://quan-nh.github.io/notes/2018/06/clojure.string/replace/</link>
