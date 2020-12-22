@@ -6,7 +6,16 @@
     <description>Recent content in Categories on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jun 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>programming language</title>
+      <link>https://quan-nh.github.io/notes/categories/programming-language/</link>
+      <pubDate>Mon, 02 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/categories/programming-language/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>web</title>
       <link>https://quan-nh.github.io/notes/categories/web/</link>

@@ -6,7 +6,25 @@
     <description>Recent content in Tags on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jun 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rebol</title>
+      <link>https://quan-nh.github.io/notes/tags/rebol/</link>
+      <pubDate>Mon, 02 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/rebol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>red</title>
+      <link>https://quan-nh.github.io/notes/tags/red/</link>
+      <pubDate>Mon, 02 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/red/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>clojure</title>
       <link>https://quan-nh.github.io/notes/tags/clojure/</link>
