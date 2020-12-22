@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>learning red/rebol</title>
+	<title>Oauth2 Grant Types</title>
 	
 	
 	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
@@ -35,29 +35,30 @@
 	
 	<main>
 		<article>
-			<h1>learning red/rebol</h1>
-			<b><time>02.07.2018 10:25</time></b>
+			<h1>Oauth2 Grant Types</h1>
+			<b><time>18.07.2018 10:25</time></b>
 		       
-		           <a href="https://quan-nh.github.io/notes/tags/red">red</a>
-        	       
-		           <a href="https://quan-nh.github.io/notes/tags/rebol">rebol</a>
+		           <a href="https://quan-nh.github.io/notes/tags/oauth2">oauth2</a>
         	       
 
 			<div>
-				<ul>
-<li>
-<p><a href="http://www.rebol.com/docs/core23/rebolcore.html">REBOL/Core Users Guide</a></p>
+				<p>OAuth2 provides several <code>grant types</code> for different use cases.</p>
+<h3 id="authorization-code-grant">Authorization Code Grant</h3>
+<p>![Authorization Code Grant](&quot;/images/Authorization Code Grant.png&quot;)</p>
+<h3 id="implicit-grant">Implicit Grant</h3>
+<p>Previously, it was recommended that browser-based apps use the &ldquo;Implicit&rdquo; flow, which returns an access token immediately in the redirect and does not have a token exchange step. The industry best practice has changed to recommend that the authorization code flow be used without the client secret.</p>
 <ul>
-<li><a href="https://github.com/red/red/wiki/%5BDOC%5D-REBOL-Core-Users-Guide-__-A-walkthrough-with-Red">A walkthrough with Red</a></li>
+<li><a href="https://tools.ietf.org/html/rfc8252#section-8.2">https://tools.ietf.org/html/rfc8252#section-8.2</a></li>
+<li><a href="https://oauth.net/2/pkce/">https://oauth.net/2/pkce/</a></li>
 </ul>
-</li>
-<li>
-<p><a href="http://helpin.red/">Helpin&rsquo;Red</a></p>
-</li>
-<li>
-<p><a href="http://www.red-by-example.org/">Red by Example</a></p>
-</li>
-</ul>
+<p>![Implicit Grant](&quot;/images/Implicit Grant.png&quot;)</p>
+<h3 id="password-grant">Password Grant</h3>
+<p>![Password Grant](&quot;/images/Password Grant.png&quot;)</p>
+<h3 id="client-credentials-grant">Client Credentials Grant</h3>
+<p>This grant is suitable for machine-to-machine authentication where a specific user’s permission to access data is not required.</p>
+<p>![Client Credentials Grant](&quot;/images/Client Credentials Grant.png&quot;)</p>
+<h3 id="refresh-token-grant">Refresh Token Grant</h3>
+<p>![Refresh Token Grant](&quot;/images/Refresh Token Grant.png&quot;)</p>
 
 			</div>
 		</article>

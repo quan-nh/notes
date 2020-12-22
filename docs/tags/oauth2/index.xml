@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>oauth2 on q-notes</title>
+    <link>https://quan-nh.github.io/notes/tags/oauth2/</link>
+    <description>Recent content in oauth2 on q-notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/oauth2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oauth2 Grant Types</title>
+      <link>https://quan-nh.github.io/notes/2018/07/oauth2-grant-types/</link>
+      <pubDate>Wed, 18 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2018/07/oauth2-grant-types/</guid>
+      <description>OAuth2 provides several grant types for different use cases.
+Authorization Code Grant ![Authorization Code Grant](&amp;quot;/images/Authorization Code Grant.png&amp;quot;)
+Implicit Grant Previously, it was recommended that browser-based apps use the &amp;ldquo;Implicit&amp;rdquo; flow, which returns an access token immediately in the redirect and does not have a token exchange step. The industry best practice has changed to recommend that the authorization code flow be used without the client secret.
+ https://tools.ietf.org/html/rfc8252#section-8.2 https://oauth.net/2/pkce/  !</description>
+    </item>
+    
+  </channel>
+</rss>
