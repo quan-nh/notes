@@ -1,5 +1,5 @@
 ---
-title: stack & queue
+title: Stack & Queue
 date: 2018-07-03T10:25:15+07:00
 draft: false
 tags:

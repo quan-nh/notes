@@ -37,7 +37,7 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
     </item>
     
     <item>
-      <title>stack &amp; queue</title>
+      <title>Stack &amp; Queue</title>
       <link>https://quan-nh.github.io/notes/2018/07/stack-queue/</link>
       <pubDate>Tue, 03 Jul 2018 10:25:15 +0700</pubDate>
       
@@ -46,7 +46,7 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
     </item>
     
     <item>
-      <title>learning red/rebol</title>
+      <title>Learning Red/Rebol</title>
       <link>https://quan-nh.github.io/notes/2018/07/learning-red/rebol/</link>
       <pubDate>Mon, 02 Jul 2018 10:25:15 +0700</pubDate>
       
@@ -58,7 +58,7 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
     </item>
     
     <item>
-      <title>clojure ring</title>
+      <title>Clojure Ring</title>
       <link>https://quan-nh.github.io/notes/2018/06/clojure-ring/</link>
       <pubDate>Mon, 25 Jun 2018 10:25:15 +0700</pubDate>
       
@@ -81,7 +81,7 @@ The form of this function:
     </item>
     
     <item>
-      <title>https</title>
+      <title>Https</title>
       <link>https://quan-nh.github.io/notes/2018/06/https/</link>
       <pubDate>Fri, 22 Jun 2018 10:25:15 +0700</pubDate>
       
