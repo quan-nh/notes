@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on q-notes</title>
+    <link>https://quan-nh.github.io/notes/tags/rust/</link>
+    <description>Recent content in rust on q-notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Apr 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rust Module</title>
+      <link>https://quan-nh.github.io/notes/2020/04/rust-module/</link>
+      <pubDate>Fri, 17 Apr 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2020/04/rust-module/</guid>
+      <description>The Rust module rules are:
+ A source file is just its own module (except the special files main.rs, lib.rs and mod.rs). A directory is just a module path component. The file mod.rs is just the directory&amp;rsquo;s module.  </description>
+    </item>
+    
+  </channel>
+</rss>

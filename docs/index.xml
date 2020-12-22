@@ -6,7 +6,45 @@
     <description>Recent content on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Apr 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ex-info &amp; ex-data</title>
+      <link>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</link>
+      <pubDate>Thu, 15 Oct 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</guid>
+      <description>(defn div [x] (try (/ 3 x) (catch Exception e ;; ex-info return an ExceptionInfo exception with map data (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &amp;#34;Divide by zero&amp;#34; ;; ex-data get map data from ExceptionInfo exception (prn (ex-data e)) ; {:x 0} )) </description>
+    </item>
+    
+    <item>
+      <title>Install Java</title>
+      <link>https://quan-nh.github.io/notes/2020/06/install-java/</link>
+      <pubDate>Tue, 09 Jun 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2020/06/install-java/</guid>
+      <description> download openjdk &amp;amp; unzip to /Library/Java/JavaVirtualMachines/ dir  alias j8=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version&amp;#34; alias j13=&amp;#34;export JAVA_HOME=`/usr/libexec/java_home -v 13`; java -version&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>Go Pointers</title>
+      <link>https://quan-nh.github.io/notes/2020/04/go-pointers/</link>
+      <pubDate>Sat, 25 Apr 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2020/04/go-pointers/</guid>
+      <description>A pointer holds the memory address of a value.
+// pointer types var p *int // The &amp;amp; operator generates a pointer to its operand. i := 42 p = &amp;amp;i // The * operator denotes the pointer&amp;#39;s underlying value (deref). fmt.Println(*p) // read i through the pointer p *p = 21 // set i through the pointer p </description>
+    </item>
+    
+    <item>
+      <title>Rust Module</title>
+      <link>https://quan-nh.github.io/notes/2020/04/rust-module/</link>
+      <pubDate>Fri, 17 Apr 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2020/04/rust-module/</guid>
+      <description>The Rust module rules are:
+ A source file is just its own module (except the special files main.rs, lib.rs and mod.rs). A directory is just a module path component. The file mod.rs is just the directory&amp;rsquo;s module.  </description>
+    </item>
+    
     <item>
       <title>Oauth2 Login Flow</title>
       <link>https://quan-nh.github.io/notes/2020/04/oauth2-login-flow/</link>
@@ -58,11 +96,11 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
     </item>
     
     <item>
-      <title>Clojure Ring</title>
-      <link>https://quan-nh.github.io/notes/2018/06/clojure-ring/</link>
+      <title>Ring</title>
+      <link>https://quan-nh.github.io/notes/2018/06/ring/</link>
       <pubDate>Mon, 25 Jun 2018 10:25:15 +0700</pubDate>
       
-      <guid>https://quan-nh.github.io/notes/2018/06/clojure-ring/</guid>
+      <guid>https://quan-nh.github.io/notes/2018/06/ring/</guid>
       <description>handler fn: req -&amp;gt; resp
   middleware fn: handler -&amp;gt; handler
  request middleware  (defn wrap-user [handler user-info] (fn [request] (handler (assoc request :user user-info))))  response middleware  (defn wrap-content-type [handler content-type] (fn [request] (let [response (handler request)] (assoc-in response [:headers &amp;#34;Content-Type&amp;#34;] content-type))))  req+resp middleware  (defn wrap-cookies [handler options] (fn [request] (-&amp;gt; request (cookies-request options) handler (cookies-response options))))   middleware order: bottom up</description>
@@ -81,7 +119,7 @@ The form of this function:
     </item>
     
     <item>
-      <title>Https</title>
+      <title>https</title>
       <link>https://quan-nh.github.io/notes/2018/06/https/</link>
       <pubDate>Fri, 22 Jun 2018 10:25:15 +0700</pubDate>
       

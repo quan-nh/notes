@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>error on q-notes</title>
+    <link>https://quan-nh.github.io/notes/tags/error/</link>
+    <description>Recent content in error on q-notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/error/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ex-info &amp; ex-data</title>
+      <link>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</link>
+      <pubDate>Thu, 15 Oct 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</guid>
+      <description>(defn div [x] (try (/ 3 x) (catch Exception e ;; ex-info return an ExceptionInfo exception with map data (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &amp;#34;Divide by zero&amp;#34; ;; ex-data get map data from ExceptionInfo exception (prn (ex-data e)) ; {:x 0} )) </description>
+    </item>
+    
+  </channel>
+</rss>

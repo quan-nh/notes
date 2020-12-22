@@ -6,22 +6,76 @@
     <description>Recent content in Tags on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Apr 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure</title>
+      <link>https://quan-nh.github.io/notes/tags/clojure/</link>
+      <pubDate>Thu, 15 Oct 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>error</title>
+      <link>https://quan-nh.github.io/notes/tags/error/</link>
+      <pubDate>Thu, 15 Oct 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exception</title>
+      <link>https://quan-nh.github.io/notes/tags/exception/</link>
+      <pubDate>Thu, 15 Oct 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/exception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://quan-nh.github.io/notes/tags/java/</link>
+      <pubDate>Tue, 09 Jun 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://quan-nh.github.io/notes/tags/go/</link>
+      <pubDate>Sat, 25 Apr 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pointer</title>
+      <link>https://quan-nh.github.io/notes/tags/pointer/</link>
+      <pubDate>Sat, 25 Apr 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/pointer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://quan-nh.github.io/notes/tags/rust/</link>
+      <pubDate>Fri, 17 Apr 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/tags/rust/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>oauth2</title>
       <link>https://quan-nh.github.io/notes/tags/oauth2/</link>
       <pubDate>Thu, 16 Apr 2020 10:25:15 +0700</pubDate>
       
       <guid>https://quan-nh.github.io/notes/tags/oauth2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clojure</title>
-      <link>https://quan-nh.github.io/notes/tags/clojure/</link>
-      <pubDate>Thu, 12 Jul 2018 10:25:15 +0700</pubDate>
-      
-      <guid>https://quan-nh.github.io/notes/tags/clojure/</guid>
       <description></description>
     </item>
     
@@ -40,15 +94,6 @@
       <pubDate>Tue, 03 Jul 2018 10:25:15 +0700</pubDate>
       
       <guid>https://quan-nh.github.io/notes/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>java</title>
-      <link>https://quan-nh.github.io/notes/tags/java/</link>
-      <pubDate>Tue, 03 Jul 2018 10:25:15 +0700</pubDate>
-      
-      <guid>https://quan-nh.github.io/notes/tags/java/</guid>
       <description></description>
     </item>
     

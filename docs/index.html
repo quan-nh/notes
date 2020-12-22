@@ -38,6 +38,66 @@
 		
 		
 			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/">ex-info &amp; ex-data</a></h1>
+	<b><time>15.10.2020 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/exception">exception</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/error">error</a>
+	
+	<div>
+		(defn div [x] (try (/ 3 x) (catch Exception e ;; ex-info return an ExceptionInfo exception with map data (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &#34;Divide by zero&#34; ;; ex-data get map data from ExceptionInfo exception (prn (ex-data e)) ; {:x 0} )) 
+		
+	</div>
+</article>
+
+		
+			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2020/06/install-java/">Install Java</a></h1>
+	<b><time>09.06.2020 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/java">java</a>
+	
+	<div>
+		 download openjdk &amp; unzip to /Library/Java/JavaVirtualMachines/ dir  alias j8=&#34;export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version&#34; alias j13=&#34;export JAVA_HOME=`/usr/libexec/java_home -v 13`; java -version&#34; 
+		
+	</div>
+</article>
+
+		
+			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2020/04/go-pointers/">Go Pointers</a></h1>
+	<b><time>25.04.2020 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/go">go</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/pointer">pointer</a>
+	
+	<div>
+		A pointer holds the memory address of a value.
+// pointer types var p *int // The &amp; operator generates a pointer to its operand. i := 42 p = &amp;i // The * operator denotes the pointer&#39;s underlying value (deref). fmt.Println(*p) // read i through the pointer p *p = 21 // set i through the pointer p 
+		
+	</div>
+</article>
+
+		
+			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2020/04/rust-module/">Rust Module</a></h1>
+	<b><time>17.04.2020 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/rust">rust</a>
+	
+	<div>
+		The Rust module rules are:
+ A source file is just its own module (except the special files main.rs, lib.rs and mod.rs). A directory is just a module path component. The file mod.rs is just the directory&rsquo;s module.  
+		
+	</div>
+</article>
+
+		
+			<article>
 	<h1><a href="https://quan-nh.github.io/notes/2020/04/oauth2-login-flow/">Oauth2 Login Flow</a></h1>
 	<b><time>16.04.2020 10:25</time></b>
 	
@@ -124,7 +184,7 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
 
 		
 			<article>
-	<h1><a href="https://quan-nh.github.io/notes/2018/06/clojure-ring/">Clojure Ring</a></h1>
+	<h1><a href="https://quan-nh.github.io/notes/2018/06/ring/">Ring</a></h1>
 	<b><time>25.06.2018 10:25</time></b>
 	
 	<a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
@@ -138,44 +198,7 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
   middleware fn: handler -&gt; handler
  request middleware  (defn wrap-user [handler user-info] (fn [request] (handler (assoc request :user user-info))))  response middleware  (defn wrap-content-type [handler content-type] (fn [request] (let [response (handler request)] (assoc-in response [:headers &#34;Content-Type&#34;] content-type))))  req+resp middleware  (defn wrap-cookies [handler options] (fn [request] (-&gt; request (cookies-request options) handler (cookies-response options))))   middleware order: bottom up
 		
-			<a href="https://quan-nh.github.io/notes/2018/06/clojure-ring/">Read more...</a>
-		
-	</div>
-</article>
-
-		
-			<article>
-	<h1><a href="https://quan-nh.github.io/notes/2018/06/clojure.string/replace/">clojure.string/replace</a></h1>
-	<b><time>22.06.2018 14:25</time></b>
-	
-	<a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
-	
-	<a href="https://quan-nh.github.io/notes/tags/string">string</a>
-	
-	<div>
-		clojure.string/replace function is interesting! It can accept different types of input data.
-The form of this function:
-(clojure.string/replace s match replacement) Where match/replacement can be:
- string/string  (str/replace &#34;The color is red&#34; &#34;red&#34; &#34;blue&#34;) ;=&gt; &#34;The color is blue&#34;  char/char  (str/replace &#34;The color is red&#34; \c \k) ;=&gt; &#34;The kolor is red&#34;  pattern/string  (str/replace &#34;The color is red&#34; #&#34;red&#34; &#34;blue&#34;) ;=&gt; &#34;The color is blue&#34; ;; $1, $2, etc.
-		
-			<a href="https://quan-nh.github.io/notes/2018/06/clojure.string/replace/">Read more...</a>
-		
-	</div>
-</article>
-
-		
-			<article>
-	<h1><a href="https://quan-nh.github.io/notes/2018/06/https/">Https</a></h1>
-	<b><time>22.06.2018 10:25</time></b>
-	
-	<a href="https://quan-nh.github.io/notes/tags/https">https</a>
-	
-	<a href="https://quan-nh.github.io/notes/tags/ssl">ssl</a>
-	
-	<a href="https://quan-nh.github.io/notes/tags/web">web</a>
-	
-	<div>
-		   
+			<a href="https://quan-nh.github.io/notes/2018/06/ring/">Read more...</a>
 		
 	</div>
 </article>
@@ -183,7 +206,9 @@ The form of this function:
 		
 		<div>
 
-1 of 1
+1 of 2
+
+	<a href="https://quan-nh.github.io/notes/page/2/">Next Page</a>
 
 </div>
 

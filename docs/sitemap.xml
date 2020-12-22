@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://quan-nh.github.io/notes/tags/clojure/</loc>
+    <lastmod>2020-10-15T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/error/</loc>
+    <lastmod>2020-10-15T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</loc>
+    <lastmod>2020-10-15T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/exception/</loc>
+    <lastmod>2020-10-15T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/posts/</loc>
+    <lastmod>2020-10-15T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/</loc>
+    <lastmod>2020-10-15T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/</loc>
+    <lastmod>2020-10-15T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/2020/06/install-java/</loc>
+    <lastmod>2020-06-09T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/java/</loc>
+    <lastmod>2020-06-09T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/go/</loc>
+    <lastmod>2020-04-25T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/2020/04/go-pointers/</loc>
+    <lastmod>2020-04-25T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/pointer/</loc>
+    <lastmod>2020-04-25T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/tags/rust/</loc>
+    <lastmod>2020-04-17T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://quan-nh.github.io/notes/2020/04/rust-module/</loc>
+    <lastmod>2020-04-17T10:25:15+07:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://quan-nh.github.io/notes/tags/oauth2/</loc>
     <lastmod>2020-04-16T10:25:15+07:00</lastmod>
   </url>
@@ -13,28 +83,8 @@
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/posts/</loc>
-    <lastmod>2020-04-16T10:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://quan-nh.github.io/notes/</loc>
-    <lastmod>2020-04-16T10:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://quan-nh.github.io/notes/tags/</loc>
-    <lastmod>2020-04-16T10:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://quan-nh.github.io/notes/2018/07/oauth2-grant-types/</loc>
     <lastmod>2018-07-18T10:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://quan-nh.github.io/notes/tags/clojure/</loc>
-    <lastmod>2018-07-12T10:25:15+07:00</lastmod>
   </url>
   
   <url>
@@ -49,11 +99,6 @@
   
   <url>
     <loc>https://quan-nh.github.io/notes/tags/algorithm/</loc>
-    <lastmod>2018-07-03T10:25:15+07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://quan-nh.github.io/notes/tags/java/</loc>
     <lastmod>2018-07-03T10:25:15+07:00</lastmod>
   </url>
   
@@ -88,7 +133,7 @@
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/2018/06/clojure-ring/</loc>
+    <loc>https://quan-nh.github.io/notes/2018/06/ring/</loc>
     <lastmod>2018-06-25T10:25:15+07:00</lastmod>
   </url>
   
@@ -113,12 +158,12 @@
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/2018/06/https/</loc>
+    <loc>https://quan-nh.github.io/notes/tags/https/</loc>
     <lastmod>2018-06-22T10:25:15+07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://quan-nh.github.io/notes/tags/https/</loc>
+    <loc>https://quan-nh.github.io/notes/2018/06/https/</loc>
     <lastmod>2018-06-22T10:25:15+07:00</lastmod>
   </url>
   

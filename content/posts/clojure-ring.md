@@ -1,5 +1,5 @@
 ---
-title: Clojure Ring
+title: Ring
 date: 2018-06-25T10:25:15+07:00
 draft: false
 tags:

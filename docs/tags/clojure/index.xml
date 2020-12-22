@@ -6,7 +6,16 @@
     <description>Recent content in clojure on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Jul 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ex-info &amp; ex-data</title>
+      <link>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</link>
+      <pubDate>Thu, 15 Oct 2020 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</guid>
+      <description>(defn div [x] (try (/ 3 x) (catch Exception e ;; ex-info return an ExceptionInfo exception with map data (throw (ex-info (.getMessage e) {:x x}))))) (try (div 0) (catch Exception e (prn (.getMessage e)) ; &amp;#34;Divide by zero&amp;#34; ;; ex-data get map data from ExceptionInfo exception (prn (ex-data e)) ; {:x 0} )) </description>
+    </item>
+    
     <item>
       <title>Clojure Files</title>
       <link>https://quan-nh.github.io/notes/2018/07/clojure-files/</link>
@@ -26,11 +35,11 @@
     </item>
     
     <item>
-      <title>Clojure Ring</title>
-      <link>https://quan-nh.github.io/notes/2018/06/clojure-ring/</link>
+      <title>Ring</title>
+      <link>https://quan-nh.github.io/notes/2018/06/ring/</link>
       <pubDate>Mon, 25 Jun 2018 10:25:15 +0700</pubDate>
       
-      <guid>https://quan-nh.github.io/notes/2018/06/clojure-ring/</guid>
+      <guid>https://quan-nh.github.io/notes/2018/06/ring/</guid>
       <description>handler fn: req -&amp;gt; resp
   middleware fn: handler -&amp;gt; handler
  request middleware  (defn wrap-user [handler user-info] (fn [request] (handler (assoc request :user user-info))))  response middleware  (defn wrap-content-type [handler content-type] (fn [request] (let [response (handler request)] (assoc-in response [:headers &amp;#34;Content-Type&amp;#34;] content-type))))  req+resp middleware  (defn wrap-cookies [handler options] (fn [request] (-&amp;gt; request (cookies-request options) handler (cookies-response options))))   middleware order: bottom up</description>
