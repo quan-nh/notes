@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<style type=text/css>body{font-family:monospace;}</style>
-	<title>Rust Module</title>
+	<title>parse duration</title>
 	
 	
 	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
@@ -35,20 +35,31 @@
 	
 	<main>
 		<article>
-			<h1>Rust Module</h1>
-			<b><time>17.04.2020 10:25</time></b>
+			<h1>parse duration</h1>
+			<b><time>11.12.2019 10:25</time></b>
 		       
-		           <a href="https://quan-nh.github.io/notes/tags/rust">rust</a>
+		           <a href="https://quan-nh.github.io/notes/tags/java">java</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/time">time</a>
         	       
 
 			<div>
-				<p>The Rust module rules are:</p>
-<ul>
-<li>A source file is just its own module (except the special files <code>main.rs</code>, <code>lib.rs</code> and <code>mod.rs</code>).</li>
-<li>A directory is just a module path component.</li>
-<li>The file <code>mod.rs</code> is just the directory&rsquo;s module.</li>
-</ul>
+				<p><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-">java.time.Duration/parse</a> function obtains a Duration from a text string in <a href="https://en.wikipedia.org/wiki/ISO_8601#Durations">ISO-8601</a> duration format <code>P&lt;date&gt;T&lt;time&gt;</code></p>
+<p>Examples:</p>
+<pre><code>&quot;PT20.345S&quot; -- parses as &quot;20.345 seconds&quot;
+&quot;PT15M&quot;     -- parses as &quot;15 minutes&quot; (where a minute is 60 seconds)
+&quot;PT10H&quot;     -- parses as &quot;10 hours&quot; (where an hour is 3600 seconds)
+&quot;P2D&quot;       -- parses as &quot;2 days&quot; (where a day is 24 hours or 86400 seconds)
+&quot;P2DT3H4M&quot;  -- parses as &quot;2 days, 3 hours and 4 minutes&quot;
+&quot;P-6H3M&quot;    -- parses as &quot;-6 hours and +3 minutes&quot;
+&quot;-P6H3M&quot;    -- parses as &quot;-6 hours and -3 minutes&quot;
+&quot;-P-6H+3M&quot;  -- parses as &quot;+6 hours and -3 minutes&quot;
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(import java.time.Duration)
 
+(<span style="color:#a6e22e">.getSeconds</span> (<span style="color:#a6e22e">Duration/parse</span> <span style="color:#e6db74">&#34;pT20.345S&#34;</span>))
+<span style="color:#75715e">;=&gt; 20</span>
+</code></pre></div>
 			</div>
 		</article>
 	</main>
