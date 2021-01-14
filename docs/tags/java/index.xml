@@ -17,11 +17,11 @@
     </item>
     
     <item>
-      <title>parse duration</title>
-      <link>https://quan-nh.github.io/notes/2019/12/parse-duration/</link>
+      <title>Java Duration Parser</title>
+      <link>https://quan-nh.github.io/notes/2019/12/java-duration-parser/</link>
       <pubDate>Wed, 11 Dec 2019 10:25:15 +0700</pubDate>
       
-      <guid>https://quan-nh.github.io/notes/2019/12/parse-duration/</guid>
+      <guid>https://quan-nh.github.io/notes/2019/12/java-duration-parser/</guid>
       <description>java.time.Duration/parse function obtains a Duration from a text string in ISO-8601 duration format P&amp;lt;date&amp;gt;T&amp;lt;time&amp;gt;
 Examples:
 &amp;quot;PT20.345S&amp;quot; -- parses as &amp;quot;20.345 seconds&amp;quot; &amp;quot;PT15M&amp;quot; -- parses as &amp;quot;15 minutes&amp;quot; (where a minute is 60 seconds) &amp;quot;PT10H&amp;quot; -- parses as &amp;quot;10 hours&amp;quot; (where an hour is 3600 seconds) &amp;quot;P2D&amp;quot; -- parses as &amp;quot;2 days&amp;quot; (where a day is 24 hours or 86400 seconds) &amp;quot;P2DT3H4M&amp;quot; -- parses as &amp;quot;2 days, 3 hours and 4 minutes&amp;quot; &amp;quot;P-6H3M&amp;quot; -- parses as &amp;quot;-6 hours and +3 minutes&amp;quot; &amp;quot;-P6H3M&amp;quot; -- parses as &amp;quot;-6 hours and -3 minutes&amp;quot; &amp;quot;-P-6H+3M&amp;quot; -- parses as &amp;quot;+6 hours and -3 minutes&amp;quot;  (import java.</description>

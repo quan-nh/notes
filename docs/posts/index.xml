@@ -55,11 +55,11 @@
     </item>
     
     <item>
-      <title>parse duration</title>
-      <link>https://quan-nh.github.io/notes/2019/12/parse-duration/</link>
+      <title>Java Duration Parser</title>
+      <link>https://quan-nh.github.io/notes/2019/12/java-duration-parser/</link>
       <pubDate>Wed, 11 Dec 2019 10:25:15 +0700</pubDate>
       
-      <guid>https://quan-nh.github.io/notes/2019/12/parse-duration/</guid>
+      <guid>https://quan-nh.github.io/notes/2019/12/java-duration-parser/</guid>
       <description>java.time.Duration/parse function obtains a Duration from a text string in ISO-8601 duration format P&amp;lt;date&amp;gt;T&amp;lt;time&amp;gt;
 Examples:
 &amp;quot;PT20.345S&amp;quot; -- parses as &amp;quot;20.345 seconds&amp;quot; &amp;quot;PT15M&amp;quot; -- parses as &amp;quot;15 minutes&amp;quot; (where a minute is 60 seconds) &amp;quot;PT10H&amp;quot; -- parses as &amp;quot;10 hours&amp;quot; (where an hour is 3600 seconds) &amp;quot;P2D&amp;quot; -- parses as &amp;quot;2 days&amp;quot; (where a day is 24 hours or 86400 seconds) &amp;quot;P2DT3H4M&amp;quot; -- parses as &amp;quot;2 days, 3 hours and 4 minutes&amp;quot; &amp;quot;P-6H3M&amp;quot; -- parses as &amp;quot;-6 hours and +3 minutes&amp;quot; &amp;quot;-P6H3M&amp;quot; -- parses as &amp;quot;-6 hours and -3 minutes&amp;quot; &amp;quot;-P-6H+3M&amp;quot; -- parses as &amp;quot;+6 hours and -3 minutes&amp;quot;  (import java.</description>
@@ -104,6 +104,19 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
  A walkthrough with Red    Helpin&amp;rsquo;Red
   Red by Example
   </description>
+    </item>
+    
+    <item>
+      <title>Clojure REPL</title>
+      <link>https://quan-nh.github.io/notes/2018/06/clojure-repl/</link>
+      <pubDate>Thu, 28 Jun 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2018/06/clojure-repl/</guid>
+      <description>local repl $ clj Clojure 1.9.0 user=&amp;gt; (+ 1 1) 2 socket repl start socket repl
+$ clj -J-Dclojure.server.repl=&amp;#34;{:port 5555 :accept clojure.core.server/repl}&amp;#34; Clojure 1.9.0 then, connect to this socket:
+ w/ telnet $ telnet 127.0.0.1 5555 Trying 127.0.0.1... Connected to localhost. Escape character is &amp;#39;^]&amp;#39;. user=&amp;gt; (println &amp;#34;hello&amp;#34;) hello user=&amp;gt; :repl/quit Connection closed by foreign host.   nREPL deps.edn
+{:deps {nrepl {:mvn/version &amp;#34;0.4.1&amp;#34;}}} start nrepl server
+$ clj Clojure 1.</description>
     </item>
     
     <item>

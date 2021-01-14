@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>repl on q-notes</title>
+    <link>https://quan-nh.github.io/notes/tags/repl/</link>
+    <description>Recent content in repl on q-notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jun 2018 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/tags/repl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clojure REPL</title>
+      <link>https://quan-nh.github.io/notes/2018/06/clojure-repl/</link>
+      <pubDate>Thu, 28 Jun 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2018/06/clojure-repl/</guid>
+      <description>local repl $ clj Clojure 1.9.0 user=&amp;gt; (+ 1 1) 2 socket repl start socket repl
+$ clj -J-Dclojure.server.repl=&amp;#34;{:port 5555 :accept clojure.core.server/repl}&amp;#34; Clojure 1.9.0 then, connect to this socket:
+ w/ telnet $ telnet 127.0.0.1 5555 Trying 127.0.0.1... Connected to localhost. Escape character is &amp;#39;^]&amp;#39;. user=&amp;gt; (println &amp;#34;hello&amp;#34;) hello user=&amp;gt; :repl/quit Connection closed by foreign host.   nREPL deps.edn
+{:deps {nrepl {:mvn/version &amp;#34;0.4.1&amp;#34;}}} start nrepl server
+$ clj Clojure 1.</description>
+    </item>
+    
+  </channel>
+</rss>

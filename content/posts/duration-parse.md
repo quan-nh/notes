@@ -1,5 +1,5 @@
 ---
-title: parse duration
+title: Java Duration Parser
 date: 2019-12-11T10:25:15+07:00
 draft: false
 tags:
