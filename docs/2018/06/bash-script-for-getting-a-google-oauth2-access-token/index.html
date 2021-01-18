@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Bash script for getting a Google Oauth2 access token</title>
+	
+	
+	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://quan-nh.github.io/notes/">q-notes</a> ==<br>
+	=============
+	<div style="float: right;">Note all the things!</div><br>
+	<p>
+	<nav>
+			<a href="https://quan-nh.github.io/notes/"><b>Start</b></a>.
+			
+			
+			<a href="https://quan-nh.github.io/notes/posts/"><b>Posts</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Bash script for getting a Google Oauth2 access token</h1>
+			<b><time>22.06.2018 10:25</time></b>
+		       
+		           <a href="https://quan-nh.github.io/notes/tags/oauth2">oauth2</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/bash">bash</a>
+        	       
+
+			<div>
+				<p>A project from <a href="https://console.developers.google.com/">https://console.developers.google.com/</a> has:</p>
+<ul>
+<li>client-id</li>
+<li>secret</li>
+</ul>
+<p>Scopes: e.g. <a href="https://developers.google.com/drive/api/v3/about-auth#what_scope_or_scopes_does_my_app_need">google drive api scopes</a></p>
+<p>We need to get refresh token &amp; access token:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Authorization link.  Place this in a browser and copy the code that is returned after you accept the scopes.</span>
+https://accounts.google.com/o/oauth2/auth?client_id<span style="color:#f92672">=[</span>Client Id<span style="color:#f92672">]</span>&amp;redirect_uri<span style="color:#f92672">=</span>urn:ietf:wg:oauth:2.0:oob&amp;scope<span style="color:#f92672">=[</span>Scopes<span style="color:#f92672">]</span>&amp;response_type<span style="color:#f92672">=</span>code
+
+<span style="color:#75715e"># Exchange Authorization code for an access token and a refresh token.</span>
+curl -X POST <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     -d <span style="color:#e6db74">&#39;code=[Authentcation code]&amp;client_id=[Client Id]&amp;client_secret=[Secret]&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;grant_type=authorization_code&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     https://accounts.google.com/o/oauth2/token
+
+<span style="color:#75715e"># Exchange a refresh token for a new access token.</span>
+curl -X POST <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     -d <span style="color:#e6db74">&#39;client_id=[Client Id]&amp;client_secret=[Secret]&amp;refresh_token=[Refresh token]&amp;grant_type=refresh_token&#39;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     https://accounts.google.com/o/oauth2/token
+</code></pre></div><p>clj code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj">(-&gt; <span style="color:#e6db74">&#34;https://www.googleapis.com/oauth2/v4/token&#34;</span>
+    (<span style="color:#a6e22e">http/post</span> {<span style="color:#e6db74">:form-params</span> {<span style="color:#e6db74">:refresh_token</span> refresh-token
+                              <span style="color:#e6db74">:client_id</span>     client-id
+                              <span style="color:#e6db74">:client_secret</span> client-secret
+                              <span style="color:#e6db74">:grant_type</span>    <span style="color:#e6db74">&#34;refresh_token&#34;</span>}
+                <span style="color:#e6db74">:as</span>          <span style="color:#e6db74">:json</span>})
+    (<span style="color:#a6e22e">get-in</span> [<span style="color:#e6db74">:body</span> <span style="color:#e6db74">:access_token</span>]))
+</code></pre></div>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="https://quan-nh.github.io/notes/2021/01/clojure-code-snippets/">Clojure Code Snippets</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/">ex-info &amp; ex-data</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/06/install-java/">Install Java</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/04/go-pointers/">Go Pointers</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/04/rust-module/">Rust Module</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2021 <a href="https://quan-nh.github.io/notes/"><b>q-notes</b></a>.
+	<a href="https://github.com/quan-nh"><b>Github</b></a>.
+	<a href="https://twitter.com/huu2uan"><b>Twitter</b></a>.
+	<a href="https://quan-nh.github.io/notes/index.xml"><b>RSS</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>

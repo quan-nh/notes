@@ -143,6 +143,26 @@ The form of this function:
 
 		
 			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2018/06/bash-script-for-getting-a-google-oauth2-access-token/">Bash script for getting a Google Oauth2 access token</a></h1>
+	<b><time>22.06.2018 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/oauth2">oauth2</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/bash">bash</a>
+	
+	<div>
+		A project from https://console.developers.google.com/ has:
+ client-id secret  Scopes: e.g. google drive api scopes
+We need to get refresh token &amp; access token:
+# Authorization link. Place this in a browser and copy the code that is returned after you accept the scopes. https://accounts.google.com/o/oauth2/auth?client_id=[Client Id]&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;scope=[Scopes]&amp;response_type=code # Exchange Authorization code for an access token and a refresh token. curl -X POST \  -d &#39;code=[Authentcation code]&amp;client_id=[Client Id]&amp;client_secret=[Secret]&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;grant_type=authorization_code&#39; \  https://accounts.google.com/o/oauth2/token # Exchange a refresh token for a new access token.
+		
+			<a href="https://quan-nh.github.io/notes/2018/06/bash-script-for-getting-a-google-oauth2-access-token/">Read more...</a>
+		
+	</div>
+</article>
+
+		
+			<article>
 	<h1><a href="https://quan-nh.github.io/notes/2018/06/https/">https</a></h1>
 	<b><time>22.06.2018 10:25</time></b>
 	
