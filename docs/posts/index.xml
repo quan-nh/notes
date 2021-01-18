@@ -6,7 +6,17 @@
     <description>Recent content in Posts on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2020 10:25:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jan 2021 10:43:14 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clojure Code Snippets</title>
+      <link>https://quan-nh.github.io/notes/2021/01/clojure-code-snippets/</link>
+      <pubDate>Mon, 18 Jan 2021 10:43:14 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2021/01/clojure-code-snippets/</guid>
+      <description>Some Clojure code snippets.
+;; map ; apply fn to all value of a map (into {} (for [[k v] m] [k (f v)])) ; using Specter (transform [MAP-VALS] inc {:a 1 :b 2 :c 3}) ;=&amp;gt; {:a 2, :b 3, :c 4} ; update the values of multiple keys (defn update-vals [m ks &amp;amp; args] (reduce #(apply update % %2 args) m ks)) (update-vals {:a 0 :b 1 :c 2} [:a :b] inc) ;;=&amp;gt; {:a 1, :b 2, c 2}  (update-vals {:a 0 :b 1 :c 2} [:a :b] + 10) ;;=&amp;gt; {:a 10, :b 11, c 2} ;; using Specter (transform (multi-path :a :b) inc {:a 0, :b 1, :c 2}) ;=&amp;gt; {:a 1, :b 2, :c 2} (transform [(submap [:a :b]) MAP-VALS] inc {:a 0, :b 1, :c 2}) ;=&amp;gt; {:c 2, :a 1, :b 2} ;; vector ; remove the element at index n from vector v (into (subvec v 0 n) (subvec v (inc n))) </description>
+    </item>
+    
     <item>
       <title>ex-info &amp; ex-data</title>
       <link>https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/</link>

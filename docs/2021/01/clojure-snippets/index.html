@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Clojure Snippets</title>
+	
+	
+	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://quan-nh.github.io/notes/">q-notes</a> ==<br>
+	=============
+	<div style="float: right;">Note all the things!</div><br>
+	<p>
+	<nav>
+			<a href="https://quan-nh.github.io/notes/"><b>Start</b></a>.
+			
+			
+			<a href="https://quan-nh.github.io/notes/posts/"><b>Posts</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Clojure Snippets</h1>
+			<b><time>18.01.2021 10:43</time></b>
+		       
+		           <a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/snippet">snippet</a>
+        	       
+
+			<div>
+				<p>Some Clojure code snippets.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj"><span style="color:#75715e">;; map</span>
+
+<span style="color:#75715e">; apply fn to all value of a map</span>
+(into {} (for [[k v] m]
+           [k (<span style="color:#a6e22e">f</span> v)]))
+
+<span style="color:#75715e">; using Specter</span>
+(<span style="color:#a6e22e">transform</span> [MAP-VALS] inc {<span style="color:#e6db74">:a</span> <span style="color:#ae81ff">1</span> <span style="color:#e6db74">:b</span> <span style="color:#ae81ff">2</span> <span style="color:#e6db74">:c</span> <span style="color:#ae81ff">3</span>})
+<span style="color:#75715e">;=&gt; {:a 2, :b 3, :c 4}</span>
+
+
+<span style="color:#75715e">; update the values of multiple keys</span>
+(<span style="color:#66d9ef">defn </span>update-vals [m ks <span style="color:#f92672">&amp;</span> args]
+  (reduce <span style="color:#f92672">#</span>(apply update % %2 args) m ks))
+
+(<span style="color:#a6e22e">update-vals</span> {<span style="color:#e6db74">:a</span> <span style="color:#ae81ff">0</span> <span style="color:#e6db74">:b</span> <span style="color:#ae81ff">1</span> <span style="color:#e6db74">:c</span> <span style="color:#ae81ff">2</span>} [<span style="color:#e6db74">:a</span> <span style="color:#e6db74">:b</span>] inc)
+<span style="color:#75715e">;;=&gt; {:a 1, :b 2, c 2} </span>
+
+(<span style="color:#a6e22e">update-vals</span> {<span style="color:#e6db74">:a</span> <span style="color:#ae81ff">0</span> <span style="color:#e6db74">:b</span> <span style="color:#ae81ff">1</span> <span style="color:#e6db74">:c</span> <span style="color:#ae81ff">2</span>} [<span style="color:#e6db74">:a</span> <span style="color:#e6db74">:b</span>] + <span style="color:#ae81ff">10</span>)
+<span style="color:#75715e">;;=&gt; {:a 10, :b 11, c 2}</span>
+
+<span style="color:#75715e">;; using Specter</span>
+(<span style="color:#a6e22e">transform</span> (<span style="color:#a6e22e">multi-path</span> <span style="color:#e6db74">:a</span> <span style="color:#e6db74">:b</span>) inc {<span style="color:#e6db74">:a</span> <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">:b</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">:c</span> <span style="color:#ae81ff">2</span>})
+<span style="color:#75715e">;=&gt; {:a 1, :b 2, :c 2}</span>
+
+(<span style="color:#a6e22e">transform</span> [(<span style="color:#a6e22e">submap</span> [<span style="color:#e6db74">:a</span> <span style="color:#e6db74">:b</span>]) MAP-VALS] inc {<span style="color:#e6db74">:a</span> <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">:b</span> <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">:c</span> <span style="color:#ae81ff">2</span>})
+<span style="color:#75715e">;=&gt; {:c 2, :a 1, :b 2}</span>
+
+
+<span style="color:#75715e">;; vector</span>
+<span style="color:#75715e">; remove the element at index n from vector v</span>
+(into (subvec v <span style="color:#ae81ff">0</span> n) (subvec v (inc n)))
+
+
+
+</code></pre></div>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="https://quan-nh.github.io/notes/2021/01/clojure-snippets/">Clojure Snippets</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/">ex-info &amp; ex-data</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/06/install-java/">Install Java</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/04/go-pointers/">Go Pointers</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/04/rust-module/">Rust Module</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2021 <a href="https://quan-nh.github.io/notes/"><b>q-notes</b></a>.
+	<a href="https://github.com/quan-nh"><b>Github</b></a>.
+	<a href="https://twitter.com/huu2uan"><b>Twitter</b></a>.
+	<a href="https://quan-nh.github.io/notes/index.xml"><b>RSS</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
