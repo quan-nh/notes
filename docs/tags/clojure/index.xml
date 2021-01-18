@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Clojure Transducer</title>
+      <link>https://quan-nh.github.io/notes/2018/07/clojure-transducer/</link>
+      <pubDate>Sun, 15 Jul 2018 10:25:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2018/07/clojure-transducer/</guid>
+      <description>;; reference ; https://clojure.org/reference/transducers ; https://www.astrecipes.net/blog/2016/11/24/transducers-how-to/ ; http://elbenshira.com/blog/understanding-transducers/ ;; what is ; reducing fn: result, input -&amp;gt; result (conj [1 2 3] 4) ;=&amp;gt; [1 2 3 4] (+ 10 1) ;=&amp;gt; 11 ; transducer (xform): transform from one reducing fn to another ; (result, input -&amp;gt; result) -&amp;gt; (result, input -&amp;gt; result) ;; how to use (filter odd?) ; returns a transducer that filters odd (map inc) ; returns a mapping transducer for incrementing (take 5) ; returns a transducer that will take the first 5 values ; comp: right-to-left, but builds a transformation stack runs left-to-right ~ thread macro (def xf (comp (filter odd?</description>
+    </item>
+    
+    <item>
       <title>Clojure Files</title>
       <link>https://quan-nh.github.io/notes/2018/07/clojure-files/</link>
       <pubDate>Thu, 12 Jul 2018 10:25:15 +0700</pubDate>

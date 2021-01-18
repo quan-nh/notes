@@ -147,6 +147,23 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
 
 		
 			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2018/07/clojure-transducer/">Clojure Transducer</a></h1>
+	<b><time>15.07.2018 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/transducer">transducer</a>
+	
+	<div>
+		;; reference ; https://clojure.org/reference/transducers ; https://www.astrecipes.net/blog/2016/11/24/transducers-how-to/ ; http://elbenshira.com/blog/understanding-transducers/ ;; what is ; reducing fn: result, input -&gt; result (conj [1 2 3] 4) ;=&gt; [1 2 3 4] (+ 10 1) ;=&gt; 11 ; transducer (xform): transform from one reducing fn to another ; (result, input -&gt; result) -&gt; (result, input -&gt; result) ;; how to use (filter odd?) ; returns a transducer that filters odd (map inc) ; returns a mapping transducer for incrementing (take 5) ; returns a transducer that will take the first 5 values ; comp: right-to-left, but builds a transformation stack runs left-to-right ~ thread macro (def xf (comp (filter odd?
+		
+			<a href="https://quan-nh.github.io/notes/2018/07/clojure-transducer/">Read more...</a>
+		
+	</div>
+</article>
+
+		
+			<article>
 	<h1><a href="https://quan-nh.github.io/notes/2018/07/clojure-files/">Clojure Files</a></h1>
 	<b><time>12.07.2018 10:25</time></b>
 	
@@ -179,24 +196,6 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
 		Stack  Java  Stack&lt;Integer&gt; st = new Stack&lt;&gt;(); st.push(1); // st=[1] st.push(2); // st=[1, 2] st.push(3); // st=[1, 2, 3]  // returns the element on the top of the stack, removing it from stack st.pop(); //=&gt; 3, st=[1, 2]  // returns the element on the top of the stack, but does not remove it st.peek(); //=&gt; 2, st=[1, 2]  Clojure Vector  (def st [1 2 3]) ; the functions operate on the right side (peek st) ;=&gt; 3 (pop st) ;=&gt; [1 2] (conj st 4) ;=&gt; [1 2 3 4]  Clojure List  (def st &#39;(1 2 3)) ; the functions operate on the left side (peek st) ;=&gt; 1 (pop st) ;=&gt; (2 3) (conj st 4) ;=&gt; (4 1 2 3) Queue Add last, remove first impl:
 		
 			<a href="https://quan-nh.github.io/notes/2018/07/stack-queue/">Read more...</a>
-		
-	</div>
-</article>
-
-		
-			<article>
-	<h1><a href="https://quan-nh.github.io/notes/2018/07/learning-red/rebol/">Learning Red/Rebol</a></h1>
-	<b><time>02.07.2018 10:25</time></b>
-	
-	<a href="https://quan-nh.github.io/notes/tags/red">red</a>
-	
-	<a href="https://quan-nh.github.io/notes/tags/rebol">rebol</a>
-	
-	<div>
-		  REBOL/Core Users Guide
- A walkthrough with Red    Helpin&rsquo;Red
-  Red by Example
-  
 		
 	</div>
 </article>

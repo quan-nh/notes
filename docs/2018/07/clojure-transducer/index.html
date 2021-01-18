@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<style type=text/css>body{font-family:monospace;}</style>
+	<title>Clojure Transducer</title>
+	
+	
+	<link rel="stylesheet" href="https://quan-nh.github.io/notes/css/style.css">
+	
+	
+</head>
+<body>
+	<header>
+	=============<br>
+	== <a href="https://quan-nh.github.io/notes/">q-notes</a> ==<br>
+	=============
+	<div style="float: right;">Note all the things!</div><br>
+	<p>
+	<nav>
+			<a href="https://quan-nh.github.io/notes/"><b>Start</b></a>.
+			
+			
+			<a href="https://quan-nh.github.io/notes/posts/"><b>Posts</b></a>.
+			
+			<a href="https://quan-nh.github.io/notes/tags/"><b>Tags</b></a>.
+			
+	</nav>
+	</p>
+	
+</header>
+
+	
+	<main>
+		<article>
+			<h1>Clojure Transducer</h1>
+			<b><time>15.07.2018 10:25</time></b>
+		       
+		           <a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+        	       
+		           <a href="https://quan-nh.github.io/notes/tags/transducer">transducer</a>
+        	       
+
+			<div>
+				<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clj" data-lang="clj"><span style="color:#75715e">;; reference</span>
+<span style="color:#75715e">; https://clojure.org/reference/transducers</span>
+<span style="color:#75715e">; https://www.astrecipes.net/blog/2016/11/24/transducers-how-to/</span>
+<span style="color:#75715e">; http://elbenshira.com/blog/understanding-transducers/</span>
+
+<span style="color:#75715e">;; what is</span>
+
+<span style="color:#75715e">; reducing fn: result, input -&gt; result</span>
+(conj [<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">3</span>] <span style="color:#ae81ff">4</span>)
+<span style="color:#75715e">;=&gt; [1 2 3 4]</span>
+
+(+ <span style="color:#ae81ff">10</span> <span style="color:#ae81ff">1</span>)
+<span style="color:#75715e">;=&gt; 11</span>
+
+<span style="color:#75715e">; transducer (xform): transform from one reducing fn to another</span>
+<span style="color:#75715e">; (result, input -&gt; result) -&gt; (result, input -&gt; result)</span>
+
+
+<span style="color:#75715e">;; how to use</span>
+
+(filter odd?) <span style="color:#75715e">; returns a transducer that filters odd</span>
+(map inc)     <span style="color:#75715e">; returns a mapping transducer for incrementing</span>
+(take <span style="color:#ae81ff">5</span>)      <span style="color:#75715e">; returns a transducer that will take the first 5 values</span>
+
+<span style="color:#75715e">; comp: right-to-left, but builds a transformation stack runs left-to-right ~ thread macro</span>
+(<span style="color:#66d9ef">def </span>xf
+  (<span style="color:#a6e22e">comp</span>
+    (filter odd?)
+    (map inc)
+    (take <span style="color:#ae81ff">5</span>)))
+
+<span style="color:#75715e">; equivalent</span>
+(<span style="color:#a6e22e">-&gt;&gt;</span> coll
+     (filter odd?)
+     (map inc)
+     (take <span style="color:#ae81ff">5</span>))
+
+
+<span style="color:#75715e">;; transduce will immediately (not lazily) reduce over coll</span>
+<span style="color:#75715e">;; with the transducer xform applied to the reducing function f</span>
+(<span style="color:#a6e22e">transduce</span> xform f coll)
+(<span style="color:#a6e22e">transduce</span> xform f init coll)
+
+(<span style="color:#66d9ef">def </span>xf (comp (filter odd?) (map inc)))
+(<span style="color:#a6e22e">transduce</span> xf + (range <span style="color:#ae81ff">5</span>))
+<span style="color:#75715e">;=&gt; 6</span>
+(<span style="color:#a6e22e">transduce</span> xf + <span style="color:#ae81ff">100</span> (range <span style="color:#ae81ff">5</span>))
+<span style="color:#75715e">;=&gt; 106</span>
+
+
+<span style="color:#75715e">;; eduction returns a reducible/iterable</span>
+(<span style="color:#66d9ef">def </span>iter (<span style="color:#a6e22e">eduction</span> xf (range <span style="color:#ae81ff">5</span>)))
+(reduce + <span style="color:#ae81ff">0</span> iter)
+<span style="color:#75715e">;=&gt; 6</span>
+
+
+<span style="color:#75715e">;; into: transducer coll -&gt; coll</span>
+(into [] xf (range <span style="color:#ae81ff">1000</span>))
+
+(<span style="color:#a6e22e">sequence</span> xf (range <span style="color:#ae81ff">1000</span>))
+
+
+<span style="color:#75715e">;; creating transducers</span>
+<span style="color:#75715e">; https://dev.to/greencoder/build-your-own-transducer-and-impress-your-cat---part-1-mhp</span>
+(<span style="color:#66d9ef">fn </span>[xf]
+  (<span style="color:#66d9ef">fn </span>([] ...)                <span style="color:#75715e">; init</span>
+      ([result] ...)          <span style="color:#75715e">; completion</span>
+      ([result input] ...)))  <span style="color:#75715e">; step</span>
+
+(<span style="color:#66d9ef">def </span>inc-transducer
+  (<span style="color:#66d9ef">fn </span>[rf]
+    (<span style="color:#66d9ef">fn </span>([] (<span style="color:#a6e22e">rf</span>))                                   <span style="color:#75715e">; 0-arity aka &#39;the useless&#39;</span>
+        ([result] (<span style="color:#a6e22e">rf</span> result))                      <span style="color:#75715e">; 1-arity aka &#39;the flusher&#39;</span>
+        ([result input] (<span style="color:#a6e22e">rf</span> result (inc input)))))) <span style="color:#75715e">; 2-arity aka &#39;the doer&#39;</span>
+
+(into [] inc-transducer (list <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">6</span>))
+<span style="color:#75715e">; =&gt; [5 6 7]</span>
+<span style="color:#75715e">; idiomatic way:</span>
+<span style="color:#75715e">; (into [] (map inc) (list 4 5 6))</span>
+
+
+<span style="color:#75715e">;; with core.async</span>
+<span style="color:#75715e">; https://eli.thegreenplace.net/2017/reducers-transducers-and-coreasync-in-clojure/</span>
+<span style="color:#75715e">; https://malcolmsparks.com/posts/transducers.html</span>
+</code></pre></div>
+			</div>
+		</article>
+	</main>
+<aside>
+	<div>
+		<div>
+			<h3>LATEST POSTS</h3>
+		</div>
+		<div>
+			<ul>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/10/ex-info-ex-data/">ex-info &amp; ex-data</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/06/install-java/">Install Java</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/04/go-pointers/">Go Pointers</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/04/rust-module/">Rust Module</a></li>
+				
+				<li><a href="https://quan-nh.github.io/notes/2020/04/oauth2-login-flow/">Oauth2 Login Flow</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</aside>
+
+
+	<footer>
+	<p>&copy; 2021 <a href="https://quan-nh.github.io/notes/"><b>q-notes</b></a>.
+	<a href="https://github.com/quan-nh"><b>Github</b></a>.
+	<a href="https://twitter.com/huu2uan"><b>Twitter</b></a>.
+	<a href="https://quan-nh.github.io/notes/index.xml"><b>RSS</b></a>.
+	</p>
+</footer>
+
+</body>
+</html>
