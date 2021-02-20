@@ -38,6 +38,21 @@
 		
 		
 			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2018/07/clojure-files/">Clojure Files</a></h1>
+	<b><time>12.07.2018 10:25</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/file">file</a>
+	
+	<div>
+		(require &#39;[clojure.java.io :as io]) ; returns java.io.File object (io/file &#34;/tmp/foo&#34;) ; returns seq of java.io.File in a dir (file-seq (io/file &#34;/tmp&#34;)) ; java.io.File class ; https://docs.oracle.com/javase/7/docs/api/java/io/File.html (.isDirectory %) (.isFile %) (.getName %) (.getPath %) ; create dir (.mkdir (io/file &#34;dir&#34;)) ; delete dir has files (doseq [f (reverse (file-seq (io/file dir)))] (io/delete-file f)) 
+		
+	</div>
+</article>
+
+		
+			<article>
 	<h1><a href="https://quan-nh.github.io/notes/2018/07/stack-queue/">Stack &amp; Queue</a></h1>
 	<b><time>03.07.2018 10:25</time></b>
 	

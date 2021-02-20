@@ -6,7 +6,17 @@
     <description>Recent content in Posts on q-notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2021 10:43:14 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Feb 2021 22:01:15 +0700</lastBuildDate><atom:link href="https://quan-nh.github.io/notes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flutter Widget</title>
+      <link>https://quan-nh.github.io/notes/2021/02/flutter-widget/</link>
+      <pubDate>Sat, 20 Feb 2021 22:01:15 +0700</pubDate>
+      
+      <guid>https://quan-nh.github.io/notes/2021/02/flutter-widget/</guid>
+      <description>Hello world import &amp;#39;package:flutter/material.dart&amp;#39;; void main() { runApp( Center( child: Text( &amp;#39;Hello, world!&amp;#39;, textDirection: TextDirection.ltr, ), ), ); } The runApp() function takes the given Widget and makes it the root of the widget tree. In this example, the widget tree consists of two widgets, the Center widget and its child, the Text widget.
+When writing an app, you’ll commonly author new widgets that are subclasses of either StatelessWidget or StatefulWidget, depending on whether your widget manages any state.</description>
+    </item>
+    
     <item>
       <title>Clojure Code Snippets</title>
       <link>https://quan-nh.github.io/notes/2021/01/clojure-code-snippets/</link>

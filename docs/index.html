@@ -38,6 +38,24 @@
 		
 		
 			<article>
+	<h1><a href="https://quan-nh.github.io/notes/2021/02/flutter-widget/">Flutter Widget</a></h1>
+	<b><time>20.02.2021 22:01</time></b>
+	
+	<a href="https://quan-nh.github.io/notes/tags/flutter">flutter</a>
+	
+	<a href="https://quan-nh.github.io/notes/tags/widget">widget</a>
+	
+	<div>
+		Hello world import &#39;package:flutter/material.dart&#39;; void main() { runApp( Center( child: Text( &#39;Hello, world!&#39;, textDirection: TextDirection.ltr, ), ), ); } The runApp() function takes the given Widget and makes it the root of the widget tree. In this example, the widget tree consists of two widgets, the Center widget and its child, the Text widget.
+When writing an app, you’ll commonly author new widgets that are subclasses of either StatelessWidget or StatefulWidget, depending on whether your widget manages any state.
+		
+			<a href="https://quan-nh.github.io/notes/2021/02/flutter-widget/">Read more...</a>
+		
+	</div>
+</article>
+
+		
+			<article>
 	<h1><a href="https://quan-nh.github.io/notes/2021/01/clojure-code-snippets/">Clojure Code Snippets</a></h1>
 	<b><time>18.01.2021 10:43</time></b>
 	
@@ -174,21 +192,6 @@ Authorization Code Grant    Implicit Grant Previously, it was recommended that b
 		;; reference ; https://clojure.org/reference/transducers ; https://www.astrecipes.net/blog/2016/11/24/transducers-how-to/ ; http://elbenshira.com/blog/understanding-transducers/ ;; what is ; reducing fn: result, input -&gt; result (conj [1 2 3] 4) ;=&gt; [1 2 3 4] (+ 10 1) ;=&gt; 11 ; transducer (xform): transform from one reducing fn to another ; (result, input -&gt; result) -&gt; (result, input -&gt; result) ;; how to use (filter odd?) ; returns a transducer that filters odd (map inc) ; returns a mapping transducer for incrementing (take 5) ; returns a transducer that will take the first 5 values ; comp: right-to-left, but builds a transformation stack runs left-to-right ~ thread macro (def xf (comp (filter odd?
 		
 			<a href="https://quan-nh.github.io/notes/2018/07/clojure-transducer/">Read more...</a>
-		
-	</div>
-</article>
-
-		
-			<article>
-	<h1><a href="https://quan-nh.github.io/notes/2018/07/clojure-files/">Clojure Files</a></h1>
-	<b><time>12.07.2018 10:25</time></b>
-	
-	<a href="https://quan-nh.github.io/notes/tags/clojure">clojure</a>
-	
-	<a href="https://quan-nh.github.io/notes/tags/file">file</a>
-	
-	<div>
-		(require &#39;[clojure.java.io :as io]) ; returns java.io.File object (io/file &#34;/tmp/foo&#34;) ; returns seq of java.io.File in a dir (file-seq (io/file &#34;/tmp&#34;)) ; java.io.File class ; https://docs.oracle.com/javase/7/docs/api/java/io/File.html (.isDirectory %) (.isFile %) (.getName %) (.getPath %) ; create dir (.mkdir (io/file &#34;dir&#34;)) ; delete dir has files (doseq [f (reverse (file-seq (io/file dir)))] (io/delete-file f)) 
 		
 	</div>
 </article>
